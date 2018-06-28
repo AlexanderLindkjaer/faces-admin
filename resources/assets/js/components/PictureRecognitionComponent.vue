@@ -44,7 +44,7 @@ export default {
         var self = this;
 
         bodyFormData.set('file', file);
-        axios.post('http://127.0.0.1:5000/pic', bodyFormData,  {
+        axios.post('http://172.104.129.28:5000/pic', bodyFormData,  {
         headers: {
           'Content-Type': 'multipart/form-data'
           }
