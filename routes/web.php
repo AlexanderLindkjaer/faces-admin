@@ -17,19 +17,23 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/faces', 'FaceController@index')->name('faces');
-Route::post('/faces', 'FaceController@store');
-Route::post('/faces/update', 'FaceController@update');
 
 
-Route::get('/recognition/picture', 'PictureRecognition@index')->name('picture_recognition');
+Route::group(['middleware' => ['auth']], function () {
+  Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/faces/{id}/shoutouts', 'ShoutOutController@index');
-Route::post('/shout', 'ShoutOutController@store');
-Route::get('/shout/{id}/delete', 'ShoutOutController@destroy');
-Route::post('/shout/update', 'ShoutOutController@update');
+  Route::get('/faces', 'FaceController@index')->name('faces');
+  Route::post('/faces', 'FaceController@store');
+  Route::post('/faces/update', 'FaceController@update');
+
+
+  Route::get('/recognition/picture', 'PictureRecognition@index')->name('picture_recognition');
+
+  Route::get('/faces/{id}/shoutouts', 'ShoutOutController@index');
+  Route::post('/shout', 'ShoutOutController@store');
+  Route::get('/shout/{id}/delete', 'ShoutOutController@destroy');
+  Route::post('/shout/update', 'ShoutOutController@update');
+});
 
 /* Files */
 Route::get('/files/{id}', 'FileController@download')->name('files.download');
