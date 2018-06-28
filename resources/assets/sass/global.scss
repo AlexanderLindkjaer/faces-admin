@@ -1,0 +1,27 @@
+.chandler{
+  background-image: url("/img/chandler.png");
+  height: 50%;
+}
+
+.translate-up{
+  position: absolute;
+    top: 30%;
+}
+
+.bg-green{
+  background-color: $green
+}
+
+.bg-seconday{
+  background-color: $secondary-color;
+}
+
+.sidebar-offcanvas,
+.nav-item a{
+  color: white;
+}
+
+a#active_menu {
+    text-decoration: underline;
+    text-decoration-color: $body-bg;
+}
