@@ -29,6 +29,13 @@ class FaceController extends Controller
     {
       $faces = Face::all();
 
+      if(env('FACE_FULL_OUTPUT') == FALSE){
+        return response()->json([
+              'faces' => FaceResource::collection(Face::where('id', 1)->get()) ],
+                200
+          );
+      }
+
       return response()->json([
             'faces' => FaceResource::collection($faces) ],
               200

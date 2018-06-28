@@ -29,8 +29,10 @@
       <div class="row row-offcanvas row-offcanvas-left">
           <div class="col-md-3 col-lg-2 sidebar-offcanvas pl-0 h-100 bg-seconday" id="sidebar" role="navigation">
               <ul class="nav flex-column sticky-top pl-0 pt-5 mt-4">
-                  <li class="nav-item"><a class="nav-link" href="{{ route('faces') }}" {{ ( (Route::currentRouteName() == 'home') ? 'id=active_menu' : '') }}
+                  <li class="nav-item"><a class="nav-link" href="{{ route('faces') }}" {{ ( (Route::currentRouteName() == 'faces') ? 'id=active_menu' : '') }}
                     >Faces</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{{ route('picture_recognition') }}" {{ ( (Route::currentRouteName() == 'picture_recognition') ? 'id=active_menu' : '') }}
+                    >Picture Recognition</a></li>
                   <!-- <li class="nav-item">
                       <a class="nav-link" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Reports▾</a>
                       <ul class="list-unstyled flex-column pl-3 collapse" id="submenu1" aria-expanded="false">

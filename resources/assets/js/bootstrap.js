@@ -11,12 +11,14 @@ window.Popper = require('popper.js').default;
 try {
     window.$ = window.jQuery = require('jquery');
     require('bootstrap');
+    require('js-base64');
 
 
     require('toastr');
 } catch (e) {}
 
   window.toastr = require('toastr');
+  window.Base64 = require('js-base64');
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
