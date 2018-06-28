@@ -1,20 +1,21 @@
 <template lang="html">
 <div class="row">
   <div class="col-md-6">
-    <webcam ref="webcam"></webcam>
-    <button type="button" class="btn btn-success" @click="photo">Recognition</button>
+    <div class="webcam-container">
+      <img class="preview-img" :src="this.img"  />
+      <webcam ref="webcam" :height="300" :width="400"></webcam>
+    </div>
+    <button type="button" class="btn btn-success d-block" @click="photo">Recognition</button>
+  </div>
+  <div class="col-md-6">
+    <div class="">
+      <img :src="this.rec_img"  />
+    </div>
   </div>
   <div class="col-md-6">
     <div class="pt-5">
 
     </div>
-    <img :src="this.img" style="width:500px;height:400px;" />
-  </div>
-  <div class="col-md-6">
-    <div class="pt-5">
-
-    </div>
-    <img :src="this.rec_img" style="width:500px;height:400px;" />
   </div>
 
 
@@ -67,4 +68,17 @@ export default {
 </script>
 
 <style lang="css">
+
+.preview-img{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60px;
+  width: 80px;
+}
+
+.webcam-container{
+  display: inline-block;
+  position: relative;
+}
 </style>

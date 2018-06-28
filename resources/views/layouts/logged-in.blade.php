@@ -54,7 +54,7 @@
           <!--/col-->
 
           <div class="col main pt-5  h-100">
-            <div class="container mt-4">
+            <div class="container my-4">
               @yield('content')
             </div>
           </div>

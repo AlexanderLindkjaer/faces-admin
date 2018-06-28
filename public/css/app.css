@@ -10770,6 +10770,10 @@ body #app #main .row-offcanvas .main {
   height: 100%;
 }
 
+.main {
+  overflow-y: scroll;
+}
+
 .chandler {
   background-image: url("/img/chandler.png");
   height: 50%;

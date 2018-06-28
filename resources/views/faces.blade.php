@@ -1,7 +1,7 @@
 @extends('layouts.logged-in')
 
 @section('content')
-<div class="container">
+
     <div class="row">
 
       @foreach($faces as $face)
@@ -12,5 +12,5 @@
 
 
     </div>
-</div>
+
 @endsection

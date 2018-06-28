@@ -52559,7 +52559,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.preview-img{\n  position: absolute;\n  top: 0;\n  right: 0;\n  height: 60px;\n  width: 80px;\n}\n.webcam-container{\n  display: inline-block;\n  position: relative;\n}\n", ""]);
 
 // exports
 
@@ -52570,6 +52570,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -52642,45 +52643,46 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
-    _c(
-      "div",
-      { staticClass: "col-md-6" },
-      [
-        _c("webcam", { ref: "webcam" }),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-success",
-            attrs: { type: "button" },
-            on: { click: _vm.photo }
-          },
-          [_vm._v("Recognition")]
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
     _c("div", { staticClass: "col-md-6" }, [
-      _c("div", { staticClass: "pt-5" }),
+      _c(
+        "div",
+        { staticClass: "webcam-container" },
+        [
+          _c("img", { staticClass: "preview-img", attrs: { src: this.img } }),
+          _vm._v(" "),
+          _c("webcam", { ref: "webcam", attrs: { height: 300, width: 400 } })
+        ],
+        1
+      ),
       _vm._v(" "),
-      _c("img", {
-        staticStyle: { width: "500px", height: "400px" },
-        attrs: { src: this.img }
-      })
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-success d-block",
+          attrs: { type: "button" },
+          on: { click: _vm.photo }
+        },
+        [_vm._v("Recognition")]
+      )
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-md-6" }, [
-      _c("div", { staticClass: "pt-5" }),
-      _vm._v(" "),
-      _c("img", {
-        staticStyle: { width: "500px", height: "400px" },
-        attrs: { src: this.rec_img }
-      })
-    ])
+      _c("div", {}, [_c("img", { attrs: { src: this.rec_img } })])
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c("div", { staticClass: "pt-5" })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
