@@ -50324,7 +50324,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var self = this;
 
       bodyFormData.set('file', file);
-      axios.post('http://172.104.129.28:5000/pic', bodyFormData, {
+      axios.post('//172.104.129.28:5000/pic', bodyFormData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
