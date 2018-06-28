@@ -15,6 +15,7 @@ import { Base64 } from 'js-base64';
 Vue.component('face', require('./components/FaceComponent.vue'));
 Vue.component('create-face', require('./components/CreateFaceComponent.vue'));
 Vue.component('pic-rec', require('./components/PictureRecognitionComponent.vue'));
+Vue.component('server-header', require('./components/ServerHeaderControll.vue'));
 Vue.component('webcam', Webcam);
 
 

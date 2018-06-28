@@ -15031,6 +15031,7 @@ window.Vue = __webpack_require__(46);
 Vue.component('face', __webpack_require__(53));
 Vue.component('create-face', __webpack_require__(59));
 Vue.component('pic-rec', __webpack_require__(66));
+Vue.component('server-header', __webpack_require__(78));
 Vue.component('webcam', __WEBPACK_IMPORTED_MODULE_1_vue_web_cam_src_webcam___default.a);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_js_modal___default.a);
@@ -52727,6 +52728,177 @@ toastrOnLoad('#face-created', "Face created");
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(79)
+}
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(81)
+/* template */
+var __vue_template__ = __webpack_require__(82)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/ServerHeaderControll.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ffdf3494", Component.options)
+  } else {
+    hotAPI.reload("data-v-ffdf3494", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(80);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("0154d5ee", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ffdf3494\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ServerHeaderControll.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ffdf3494\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ServerHeaderControll.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.server-control{\n  display: inline-block;\n  float: right;\n}\n.spinner.active{\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 81 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      reloadServer: false
+    };
+  },
+
+  methods: {
+    reloadFaces: function reloadFaces() {
+      var self = this;
+      this.reloadServer = true;
+
+      axios.get('https://faces-admin.wecode.dk:5000/reload').then(function (response) {
+        self.reloadServer = false;
+        toastr.success('Faces reloaded on DL server');
+      }).catch(function (error) {
+        toastr.error(error);
+        console.log(error);
+      });
+    }
+  }
+
+});
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "server-control flex-row d-flex ml-auto text-white" },
+    [
+      _c("p", { staticClass: "d-inline-block mb-0" }, [
+        _vm._v("Reload server faces: ")
+      ]),
+      _c(
+        "span",
+        { staticClass: "hover pointer ml-2", on: { click: _vm.reloadFaces } },
+        [
+          _c("i", {
+            staticClass: "fa fa-2x fa-refresh",
+            class: { rotating: _vm.reloadServer }
+          })
+        ]
+      )
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-ffdf3494", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

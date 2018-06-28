@@ -5,6 +5,9 @@
     </button>
     <a class="navbar-brand" href="#" title="Free Bootstrap 4 Admin Template">FaceFunAdmin</a>
 </div>
+
+<server-header></server-header>
+
 <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
     <span class="navbar-toggler-icon"></span>
 </button>
