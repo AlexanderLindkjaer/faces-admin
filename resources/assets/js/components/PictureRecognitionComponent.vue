@@ -44,7 +44,7 @@ export default {
         var self = this;
 
         bodyFormData.set('file', file);
-        axios.post('//172.104.129.28:5000/pic', bodyFormData,  {
+        axios.post('https://faces-admin.wecode.dk:5000/pic', bodyFormData,  {
         headers: {
           'Content-Type': 'multipart/form-data'
           }
